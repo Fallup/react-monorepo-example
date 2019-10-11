@@ -1,0 +1,10 @@
+{
+  "name": "@monorepo-example/server",
+  "version": "0.0.1",
+  "description": "Monorepo server",
+  "main": "index.js",
+  "repository": "monorepo-example.salsita.com",
+  "author": "P-A-R-C-E-L",
+  "license": "MIT",
+  "private": true
+}

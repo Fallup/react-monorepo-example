@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "target": "es6",
+    "lib": ["es2017"],
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "declaration": false,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/build/**",
+    "**/babel.config.js",
+    "**/metro.config.js",
+    "**/rn-cli.config.js",
+    "**/craco.config.js",
+    "**/craco-graphql-webpack-loader.js",
+    "**/craco-override-webpack.js",
+    "**/tsconfig-prod-paths-bootstrap.js"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"],
+      "src/*": ["src/*"],
+      "@monorepo-example/*": ["../*/src"],
+      "@monorepo-example-local/*": ["../../local-packages/*/src"],
+      "@monorepo-example-local/core/*": ["../../local-packages/core/src/*"],
+      "@monorepo-example-local/types/*": ["../../local-packages/types/src/*"],
+      "@monorepo-example-local/theme/*": ["../../local-packages/theme/src/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}
+

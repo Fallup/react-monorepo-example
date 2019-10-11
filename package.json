@@ -1,0 +1,48 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/react",
+      "**/react/**",
+      "**/react-dom",
+      "**/react-dom/**",
+      "**/react-scripts",
+      "**/react-scripts/**",
+      "**/react-native",
+      "**/react-native/**"
+    ]
+  },
+  "scripts": {
+    "server": "lerna run start --scope @monorepo-example/server --stream",
+    "server:prod": "cd packages/monorepo-example-server/ && yarn start:prod",
+    "web": "lerna run start --scope @monorepo-example/web --stream",
+    "android": "lerna run start:android --scope @monorepo-example/mobile --stream",
+    "ios": "lerna run start:ios --scope @monorepo-example/mobile --stream",
+    "web+server": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn web\"",
+    "android+server": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn android\"",
+    "ios+server": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn ios\"",
+    "build": "lerna run build",
+    "build:prod": "lerna run build:prod --stream",
+    "build:prod:web": "lerna run build:prod --scope @monorepo-example/web --stream",
+    "build:prod:mobile": "lerna run build:prod --scope @monorepo-example/mobile --stream",
+    "build:prod:server": "lerna run build:prod --scope @monorepo-example/server --stream",
+    "clean": "yarn clean:ts && yarn clean:modules && yarn clean:cache",
+    "clean:ts": "lerna run clean:ts",
+    "clean:modules": "rm -rf node_modules/ && lerna clean",
+    "clean:cache": "lerna run clean:cache",
+    "new-version": "lerna version --conventional-commits --yes",
+    "diff": "lerna diff"
+  },
+  "devDependencies": {
+    "concurrently": "4.1.2",
+    "lerna": "3.16.4",
+    "tslint": "5.20.0",
+    "tslint-react": "4.1.0",
+    "tslint-sonarts": "1.9.0",
+    "typescript": "3.6.4"
+  }
+}

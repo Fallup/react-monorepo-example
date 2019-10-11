@@ -1,0 +1,46 @@
+{
+  "name": "@monorepo-example/web",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "5.5.0",
+    "@types/jest": "24.0.18",
+    "@types/node": "12.7.12",
+    "@types/react": "16.9.5",
+    "@types/react-dom": "16.9.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-scripts": "3.2.0",
+    "typescript": "3.6.4"
+  },
+  "proxy": "http://localhost:3001",
+  "scripts": {
+    "build": "yarn clean:ts && yarn compile",
+    "clean:ts": "rm -rf ./dist",
+    "compile": "yarn copy-env && tsc -p tsconfig.json",
+    "start": "craco start",
+    "build:prod": "yarn copy-env:prod && yarn build && craco build",
+    "copy-env": "cp ../../.env .env",
+    "copy-env:prod": "cp ../../.env.production .env.production",
+    "lint": "tslint --project tsconfig.json --config tslint.json",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "craco-babel-loader": "0.1.4"
+  }
+}
